@@ -59,7 +59,7 @@
 			<artifactId>lettuce</artifactId>
 			<version>4.3.1.Final</version>
 		</dependency>		
-</dependencies>
+	</dependencies>
 	<build>
 		<plugins>
 			<plugin>
