@@ -34,11 +34,13 @@ public class BookResource {
 	@Autowired
 	private BookService bookService;
 	
+	@CrossOrigin(origins = "https://bookstoreadmin-e49b8.firebaseapp.com")
 	@RequestMapping (value="/add", method=RequestMethod.POST)
 	public Book addBookPost(@RequestBody Book book) {
 		return bookService.save(book);
 	}
 	
+	@CrossOrigin(origins = "https://bookstoreadmin-e49b8.firebaseapp.com")
 	@RequestMapping(value="/add/image", method=RequestMethod.POST)
 	public ResponseEntity upload(
 			@RequestParam("id") Long id,
@@ -64,6 +66,7 @@ public class BookResource {
 		}
 	}
 	
+	@CrossOrigin(origins = "https://bookstoreadmin-e49b8.firebaseapp.com")
 	@RequestMapping(value="/update/image", method=RequestMethod.POST)
 	public ResponseEntity updateImagePost(
 			@RequestParam("id") Long id,
@@ -90,16 +93,19 @@ public class BookResource {
 		}
 	}
 	
+	@CrossOrigin(origins = "https://bookstoreadmin-e49b8.firebaseapp.com")
 	@RequestMapping("/bookList")
 	public List<Book> getBookList() {
 		return bookService.findAll();
 	}
 	
+	@CrossOrigin(origins = "https://bookstoreadmin-e49b8.firebaseapp.com")
 	@RequestMapping(value="/update", method=RequestMethod.POST)
 	public Book updateBookPost(@RequestBody Book book) {
 		return bookService.save(book);
 	}
 	
+	@CrossOrigin(origins = "https://bookstoreadmin-e49b8.firebaseapp.com")
 	@RequestMapping(value="/remove", method=RequestMethod.POST)
 	public ResponseEntity remove(
 			@RequestBody String id
@@ -113,6 +119,7 @@ public class BookResource {
 		return new ResponseEntity("Remove Success!", HttpStatus.OK);
 	}
 	
+	@CrossOrigin(origins = "https://bookstoreadmin-e49b8.firebaseapp.com")
 	@RequestMapping("/{id}")
 	public Book getBook(@PathVariable("id") Long id){
 		Book book = bookService.findOne(id);
